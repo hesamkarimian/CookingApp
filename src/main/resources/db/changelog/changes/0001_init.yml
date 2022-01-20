@@ -1,0 +1,181 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2022-01-13-1
+      author: Hesam
+      changes:
+        - createTable:
+            tableName: RECIPES
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: RECIPES_PK
+                  name: id
+                  type: bigint
+              - column:
+                  name: name
+                  constraints:
+                    nullable: false
+                  type: varchar(255)
+              - column:
+                  name: sourceCountry
+                  type: varchar(50)
+              - column:
+                  name: imageurl
+                  type: varchar(255)
+              - column:
+                  name: description
+                  type: varchar(255)
+  - changeSet:
+      id: 2022-01-13-2
+      author: Hesam
+      changes:
+        - createTable:
+            tableName: RECIPES_AUD
+            columns:
+              - column:
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: recipes__AUD_PK
+                  name: id
+                  type: bigint
+              - column:
+                  name: rev
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: recipes__AUD_PK
+              - column:
+                  name: revtype
+                  type: smallint
+              - column:
+                  name: revend
+                  type: bigint
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: sourceCountry
+                  type: varchar(50)
+              - column:
+                  name: imageurl
+                  type: varchar(255)
+              - column:
+                  name: description
+                  type: varchar(255)
+
+  - changeSet:
+      id: 2022-01-13-3
+      author: Hesam
+      changes:
+        - createTable:
+            tableName: INGREDIENTS
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: INGREDIENTS_PK
+              - column:
+                  name: name
+                  type: varchar(255)
+
+  - changeSet:
+      id: 2022-01-13-4
+      author: Hesam
+      changes:
+        - createTable:
+            tableName: INGREDIENTS_AUD
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: INGREDIENTS_AUD_PK
+              - column:
+                  name: rev
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: INGREDIENTS_AUD_PK
+              - column:
+                  name: revtype
+                  type: smallint
+              - column:
+                  name: revend
+                  type: bigint
+              - column:
+                  name: name
+                  type: varchar(255)
+
+  - changeSet:
+      id: 2022-01-13-5
+      author: Hesam
+      changes:
+        - createTable:
+            tableName: RECIPE_INGREDIENTS
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: RECIPE_INGREDIENTS_PK
+              - column:
+                  name: recipe_id
+                  type: bigint
+              - column:
+                  name: ingredient_id
+                  type: bigint
+              - column:
+                  name: amount
+                  type: numeric(10, 2)
+
+  - changeSet:
+      id: 2022-01-13-6
+      author: Hesam
+      changes:
+        - createTable:
+            tableName: RECIPE_INGREDIENTS_AUD
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: RECIPE_INGREDIENTS_AUD_PK
+              - column:
+                  name: rev
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: RECIPE_INGREDIENTS_AUD_PK
+              - column:
+                  name: revtype
+                  type: smallint
+              - column:
+                  name: revend
+                  type: bigint
+              - column:
+                  name: recipe_id
+                  type: bigint
+              - column:
+                  name: ingredient_id
+                  type: bigint
+              - column:
+                  name: amount
+                  type: numeric(10, 2)
