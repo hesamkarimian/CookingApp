@@ -12,21 +12,21 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
                     primaryKeyName: RECIPES_PK
-                  name: id
+                  name: ID
                   type: bigint
               - column:
-                  name: name
+                  name: NAME
                   constraints:
                     nullable: false
                   type: varchar(255)
               - column:
-                  name: sourceCountry
+                  name: SOURCE_COUNTRY
                   type: varchar(50)
               - column:
-                  name: imageurl
+                  name: IMAGE_URL
                   type: varchar(255)
               - column:
-                  name: description
+                  name: DESCRIPTION
                   type: varchar(255)
   - changeSet:
       id: 2022-01-13-2
@@ -40,7 +40,7 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
                     primaryKeyName: recipes__AUD_PK
-                  name: id
+                  name: ID
                   type: bigint
               - column:
                   name: rev
@@ -56,16 +56,16 @@ databaseChangeLog:
                   name: revend
                   type: bigint
               - column:
-                  name: name
+                  name: NAME
                   type: varchar(255)
               - column:
-                  name: sourceCountry
+                  name: SOURCE_COUNTRY
                   type: varchar(50)
               - column:
-                  name: imageurl
+                  name: IMAGE_URL
                   type: varchar(255)
               - column:
-                  name: description
+                  name: DESCRIPTION
                   type: varchar(255)
 
   - changeSet:
@@ -84,7 +84,7 @@ databaseChangeLog:
                     nullable: false
                     primaryKeyName: INGREDIENTS_PK
               - column:
-                  name: name
+                  name: NAME
                   type: varchar(255)
 
   - changeSet:
@@ -115,7 +115,7 @@ databaseChangeLog:
                   name: revend
                   type: bigint
               - column:
-                  name: name
+                  name: NAME
                   type: varchar(255)
 
   - changeSet:
@@ -134,13 +134,13 @@ databaseChangeLog:
                     primaryKey: true
                     primaryKeyName: RECIPE_INGREDIENTS_PK
               - column:
-                  name: recipe_id
+                  name: RECIPE_ID
                   type: bigint
               - column:
-                  name: ingredient_id
+                  name: INGREDIENT_ID
                   type: bigint
               - column:
-                  name: amount
+                  name: AMOUNT
                   type: numeric(10, 2)
 
   - changeSet:
@@ -171,11 +171,11 @@ databaseChangeLog:
                   name: revend
                   type: bigint
               - column:
-                  name: recipe_id
+                  name: RECIPE_ID
                   type: bigint
               - column:
-                  name: ingredient_id
+                  name: INGREDIENT_ID
                   type: bigint
               - column:
-                  name: amount
+                  name: AMOUNT
                   type: numeric(10, 2)
