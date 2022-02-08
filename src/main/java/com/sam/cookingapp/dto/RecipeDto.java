@@ -1,19 +1,13 @@
 package com.sam.cookingapp.dto;
 
 import java.util.Set;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
 /**
  * @author HesamKarimian
  * @since 19/01/2022
  */
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
+@Data
 public class RecipeDto {
 
   private Long id;
@@ -23,6 +17,5 @@ public class RecipeDto {
   private String description;
 
   private Set<RecipeIngredientDto> recipeIngredients;
-
 
 }

@@ -8,7 +8,7 @@ import org.mapstruct.Mapper;
  * @author HesamKarimian
  * @since 20/01/2022
  */
-@Mapper(componentModel = "spring")
+@Mapper
 public interface RecipeMapper extends BasicMapper<Recipe, RecipeDto> {
 
   @Override

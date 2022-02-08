@@ -10,11 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 import org.hibernate.envers.Audited;
 
 /**
@@ -23,11 +19,7 @@ import org.hibernate.envers.Audited;
  */
 @Entity
 @Table(name = "RECIPE_INGREDIENTS")
-@AllArgsConstructor
-@Getter
-@Setter
-@EqualsAndHashCode
-@NoArgsConstructor
+@Data
 @Audited
 public class RecipeIngredient {
 

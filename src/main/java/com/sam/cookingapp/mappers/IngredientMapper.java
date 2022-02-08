@@ -1,5 +1,7 @@
 package com.sam.cookingapp.mappers;
 
+import com.sam.cookingapp.dto.IngredientDto;
+import com.sam.cookingapp.entitis.Ingredient;
 import org.mapstruct.Mapper;
 
 /**
@@ -8,5 +10,11 @@ import org.mapstruct.Mapper;
  */
 
 @Mapper(componentModel = "spring")
-public class IngredientMapper {
+public interface IngredientMapper extends BasicMapper<Ingredient, IngredientDto> {
+
+  @Override
+  IngredientDto toDto(Ingredient entity);
+
+  @Override
+  Ingredient toEntity(IngredientDto dto);
 }
