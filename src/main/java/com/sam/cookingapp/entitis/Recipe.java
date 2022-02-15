@@ -8,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import lombok.Data;
 import org.hibernate.envers.Audited;
 
 /**
@@ -18,7 +17,6 @@ import org.hibernate.envers.Audited;
 
 @Entity
 @Table(name = "RECIPES")
-@Data
 @Audited
 public class Recipe {
 
@@ -38,4 +36,51 @@ public class Recipe {
   @OneToMany(mappedBy = "recipe")
   private Set<RecipeIngredient> recipeIngredients;
 
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getSourceCountry() {
+    return sourceCountry;
+  }
+
+  public void setSourceCountry(String sourceCountry) {
+    this.sourceCountry = sourceCountry;
+  }
+
+  public String getImageUrl() {
+    return imageUrl;
+  }
+
+  public void setImageUrl(String imageUrl) {
+    this.imageUrl = imageUrl;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public Set<RecipeIngredient> getRecipeIngredients() {
+    return recipeIngredients;
+  }
+
+  public void setRecipeIngredients(Set<RecipeIngredient> recipeIngredients) {
+    this.recipeIngredients = recipeIngredients;
+  }
 }
