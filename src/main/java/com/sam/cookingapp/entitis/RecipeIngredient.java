@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import lombok.Data;
 import org.hibernate.envers.Audited;
 
 /**
@@ -19,9 +18,11 @@ import org.hibernate.envers.Audited;
  */
 @Entity
 @Table(name = "RECIPE_INGREDIENTS")
-@Data
 @Audited
 public class RecipeIngredient {
+
+  public RecipeIngredient() {
+  }
 
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -37,4 +38,36 @@ public class RecipeIngredient {
 
   @Column
   private BigDecimal amount;
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public Recipe getRecipe() {
+    return recipe;
+  }
+
+  public void setRecipe(Recipe recipe) {
+    this.recipe = recipe;
+  }
+
+  public Ingredient getIngredient() {
+    return ingredient;
+  }
+
+  public void setIngredient(Ingredient ingredient) {
+    this.ingredient = ingredient;
+  }
+
+  public BigDecimal getAmount() {
+    return amount;
+  }
+
+  public void setAmount(BigDecimal amount) {
+    this.amount = amount;
+  }
 }
