@@ -12,4 +12,9 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface RecipeIngredientMapper extends BasicMapper<RecipeIngredient, RecipeIngredientDto>{
 
+  @Override
+  RecipeIngredientDto toDto(RecipeIngredient entity);
+
+  @Override
+  RecipeIngredient toEntity(RecipeIngredientDto dto);
 }
