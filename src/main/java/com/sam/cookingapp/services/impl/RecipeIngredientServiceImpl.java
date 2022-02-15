@@ -4,6 +4,7 @@ import com.sam.cookingapp.dto.IngredientDto;
 import com.sam.cookingapp.dto.RecipeDto;
 import com.sam.cookingapp.entitis.Recipe;
 import com.sam.cookingapp.exceptions.RecipeNotFoundException;
+import com.sam.cookingapp.mappers.CycleAvoidingMappingContext;
 import com.sam.cookingapp.mappers.RecipeMapper;
 import com.sam.cookingapp.repositories.RecipeIngredientRepository;
 import com.sam.cookingapp.repositories.RecipeRepository;
@@ -36,7 +37,7 @@ public class RecipeIngredientServiceImpl implements RecipeIngredientService {
     return recipeRepository
       .findAll()
       .stream()
-      .map(RECIPE_MAPPER::toDto)
+      .map(r->RECIPE_MAPPER.toDto(r, new CycleAvoidingMappingContext()))
       .collect(Collectors.toList());
   }
 
@@ -44,15 +45,15 @@ public class RecipeIngredientServiceImpl implements RecipeIngredientService {
   public RecipeDto getById(Long id) {
     Recipe recipe = recipeRepository.findById(id)
                                     .orElseThrow(() -> new RecipeNotFoundException(id));
-    return RECIPE_MAPPER.toDto(recipe);
+    return RECIPE_MAPPER.toDto(recipe, new CycleAvoidingMappingContext());
   }
 
   @Override
   public RecipeDto addRecipe(RecipeDto dto) {
-    Recipe recipe = RECIPE_MAPPER.toEntity(dto);
+    Recipe recipe = RECIPE_MAPPER.toEntity(dto, new CycleAvoidingMappingContext());
     recipeRepository.save(recipe);
 
-    return RECIPE_MAPPER.toDto(recipe);
+    return RECIPE_MAPPER.toDto(recipe, new CycleAvoidingMappingContext());
   }
 
   @Override
