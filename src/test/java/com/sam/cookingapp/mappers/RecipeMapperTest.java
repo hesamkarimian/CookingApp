@@ -96,6 +96,7 @@ public class RecipeMapperTest {
     assertThat(recipeIngredientDtos.size()).isEqualTo(2);
     assertThat(recipeIngredientDtos).extracting("recipe").containsExactly(recipeDto, recipeDto);
     assertThat(recipeIngredientDtos).extracting("id").contains(1L, 2L);
+    assertThat(recipeIngredientDtos).extracting("amount").contains(new BigDecimal(111), new BigDecimal(222));
 
     recipeDto.getRecipeIngredients().forEach(rid -> {
       assertThat(this.recipe.getRecipeIngredients().stream().filter(ri -> rid.getId().equals(ri.getId())
@@ -124,6 +125,7 @@ public class RecipeMapperTest {
 
     assertThat(recipeIngredients).extracting("recipe").containsExactly(recipe, recipe);
     assertThat(recipeIngredients).extracting("id").contains(1L, 2L);
+    assertThat(recipeIngredients).extracting("amount").contains(new BigDecimal(111), new BigDecimal(222));
 
     recipe.getRecipeIngredients().forEach(ri -> {
       assertThat(this.recipeDto.getRecipeIngredients().stream().filter(rid -> ri.getId().equals(rid.getId())
