@@ -1,5 +1,6 @@
 package com.sam.cookingapp.dto;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import java.math.BigDecimal;
 
 /**
@@ -21,6 +22,7 @@ public class RecipeIngredientDto {
     this.id = id;
   }
 
+  @JsonBackReference(value = "recipe")
   public RecipeDto getRecipe() {
     return recipe;
   }
@@ -29,6 +31,7 @@ public class RecipeIngredientDto {
     this.recipe = recipe;
   }
 
+  @JsonBackReference(value = "ingredient")
   public IngredientDto getIngredient() {
     return ingredient;
   }

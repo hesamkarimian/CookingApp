@@ -1,5 +1,6 @@
 package com.sam.cookingapp.dto;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Set;
 
 /**
@@ -58,6 +59,7 @@ public class RecipeDto {
     this.description = description;
   }
 
+  @JsonManagedReference(value = "recipe")
   public Set<RecipeIngredientDto> getRecipeIngredients() {
     return recipeIngredients;
   }
