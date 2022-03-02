@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2022-02-28-1
+      author: Hesam
+      changes:
+        - createSequence:
+            sequenceName:  hibernate_sequence
+            startValue:  1
+

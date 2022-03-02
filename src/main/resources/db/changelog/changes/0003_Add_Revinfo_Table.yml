@@ -1,0 +1,66 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2022-03-01-1
+      author: Hesam Karimian
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: PK_REVINFO
+                  name: rev
+                  type: bigint
+              - column:
+                  constraints:
+                    nullable: false
+                  name: revtstmp
+                  type: bigint
+            tableName: revinfo
+  - changeSet:
+      id: 2022-03-01-2
+      author: Hesam Karimian
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: rev
+            baseTableName: RECIPES_AUD
+            constraintName: recipes_aud_rev_ref_revinfo
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: NO ACTION
+            onUpdate: NO ACTION
+            referencedColumnNames: rev
+            referencedTableName: revinfo
+            validate: true
+  - changeSet:
+      id: 2022-03-01-3
+      author: Hesam Karimian
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: rev
+            baseTableName: INGREDIENTS_AUD
+            constraintName: ingridients_aud_rev_ref_revinfo
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: NO ACTION
+            onUpdate: NO ACTION
+            referencedColumnNames: rev
+            referencedTableName: revinfo
+            validate: true
+  - changeSet:
+      id: 2022-03-01-4
+      author: Hesam Karimian
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: rev
+            baseTableName: RECIPE_INGREDIENTS_AUD
+            constraintName: recipe_ingridients_aud_rev_ref_revinfo
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: NO ACTION
+            onUpdate: NO ACTION
+            referencedColumnNames: rev
+            referencedTableName: revinfo
+            validate: true
