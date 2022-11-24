@@ -1,7 +1,7 @@
 package com.sam.cookingapp.mappers;
 
 import com.sam.cookingapp.dto.RecipeIngredientDto;
-import com.sam.cookingapp.entitis.RecipeIngredient;
+import com.sam.cookingapp.entities.RecipeIngredient;
 import org.mapstruct.Mapper;
 
 /**

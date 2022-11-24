@@ -1,4 +1,4 @@
-package com.sam.cookingapp.entitis;
+package com.sam.cookingapp.entities;
 
 import java.math.BigDecimal;
 import javax.persistence.Column;

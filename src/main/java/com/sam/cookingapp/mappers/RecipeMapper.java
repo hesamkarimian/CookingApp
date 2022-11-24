@@ -1,13 +1,8 @@
 package com.sam.cookingapp.mappers;
 
 import com.sam.cookingapp.dto.RecipeDto;
-import com.sam.cookingapp.dto.RecipeIngredientDto;
-import com.sam.cookingapp.entitis.Recipe;
-import com.sam.cookingapp.entitis.RecipeIngredient;
-import org.mapstruct.Context;
+import com.sam.cookingapp.entities.Recipe;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Mappings;
 
 /**
  * @author HesamKarimian

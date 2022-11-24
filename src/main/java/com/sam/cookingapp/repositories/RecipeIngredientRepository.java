@@ -1,6 +1,6 @@
 package com.sam.cookingapp.repositories;
 
-import com.sam.cookingapp.entitis.RecipeIngredient;
+import com.sam.cookingapp.entities.RecipeIngredient;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

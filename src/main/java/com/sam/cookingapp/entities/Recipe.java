@@ -1,4 +1,4 @@
-package com.sam.cookingapp.entitis;
+package com.sam.cookingapp.entities;
 
 import java.util.Set;
 import javax.persistence.Column;
@@ -14,18 +14,26 @@ import org.hibernate.envers.Audited;
  * @author HesamKarimian
  * @since 03/01/2022
  */
+
 @Entity
-@Table(name = "INGREDIENTS")
+@Table(name = "RECIPES")
 @Audited
-public class Ingredient {
+public class Recipe {
 
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private Long id;
+
   @Column
   private String name;
+  @Column
+  private String sourceCountry;
+  @Column
+  private String imageUrl;
+  @Column
+  private String description;
 
-  @OneToMany(mappedBy = "ingredient")
+  @OneToMany(mappedBy = "recipe")
   private Set<RecipeIngredient> recipeIngredients;
 
   public Long getId() {
@@ -42,6 +50,30 @@ public class Ingredient {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public String getSourceCountry() {
+    return sourceCountry;
+  }
+
+  public void setSourceCountry(String sourceCountry) {
+    this.sourceCountry = sourceCountry;
+  }
+
+  public String getImageUrl() {
+    return imageUrl;
+  }
+
+  public void setImageUrl(String imageUrl) {
+    this.imageUrl = imageUrl;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 
   public Set<RecipeIngredient> getRecipeIngredients() {

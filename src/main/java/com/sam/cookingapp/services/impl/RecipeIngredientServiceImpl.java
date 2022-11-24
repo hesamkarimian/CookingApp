@@ -2,8 +2,8 @@ package com.sam.cookingapp.services.impl;
 
 import com.sam.cookingapp.dto.IngredientDto;
 import com.sam.cookingapp.dto.RecipeDto;
-import com.sam.cookingapp.entitis.Ingredient;
-import com.sam.cookingapp.entitis.Recipe;
+import com.sam.cookingapp.entities.Ingredient;
+import com.sam.cookingapp.entities.Recipe;
 import com.sam.cookingapp.exceptions.IngredientNotFoundException;
 import com.sam.cookingapp.exceptions.RecipeNotFoundException;
 import com.sam.cookingapp.mappers.CycleAvoidingMappingContext;
